@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html><head>
+   <title>Getting Started with Help+ Manual</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="robots" content="noindex,follow" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ 
+   <!-- This line includes the general project style sheet (not required) -->
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+   <style type="text/css">
+       body { background:#FFF; }
+       #idx          { margin: 0; padding: 0 }     /* div tag that wraps the keyword index */
+       #idx a        { color: #000; text-decoration: none }  /* all links in index appear as text */
+
+       #idx p             { margin: 2px }        /* keywords and secondary keywords */
+	   #idx p.hilite { background-color: #adadad; padding-left: 5px; padding-bottom: 1px;}
+	   #idx p.hilite span {color: white; font-weight: bold;}
+       #idx p.idxkeyword2 { margin-left: 20px }  /* indentation for secondary keywords */
+
+       table.idxtable { background: #F4F4F4;
+                        border: thin solid #000000;
+                        border-collapse: collapse;
+                        -moz-box-shadow: 2px 2px 2px #B0B0B0;
+                        -webkit-box-shadow: 2px 2px 2px #B0B0B0;
+                        box-shadow: 2px 2px 2px #B0B0B0;
+                        filter: progid:DXImageTransform.Microsoft.Shadow(color=B0B0B0, Direction=135, Strength=4); }
+       td.idxtable    { background: #F4F4F4 }
+
+       /* font definitions for keyword section, keywords and popup links */
+       .idxsection  { font-weight: bold; font-size: 1.5em; color: #555; text-decoration: none; margin-top: 1em; margin-bottom: 1em; }
+       .idxkeyword  { font-weight: normal; font-size: 1.1em; color: #000000; text-decoration: none; }
+       .idxkeyword2 { font-weight: normal; font-size: 1.1em; color: #000000; text-decoration: none; }
+       .idxlink     { font-weight: normal; font-size: 1.1em; color: #000000; text-decoration: none; }
+
+   </style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>  
+<script type="text/javascript">
+ $(document).ready(function(){
+ var parentScope = (parent.hmNavigationFrame);
+ if (parentScope) parent.currentNav("index");
+	$("a[target='hmcontent']").on("click",function(event){
+		$("p.hilite").removeClass("hilite");
+		$(this).parent("p").addClass("hilite");
+		if (parentScope)
+			window.parent.showNav("toggle");
+		});
+});
+</script>
+   <script type="text/javascript" src="hmcontextids.js"></script>
+</head>
+<body>
+  <!-- Place holder for the keyword index - this variable is REQUIRED! -->
+  <script type="text/javascript">
+
+  function hmInitHideLinks(cssCode) {
+  	var styleElement = document.createElement("style");
+  	styleElement.type = "text/css";
+  	if (styleElement.styleSheet) {
+    	styleElement.styleSheet.cssText = cssCode;
+  	}
+  	else {
+    	styleElement.appendChild(document.createTextNode(cssCode));
+  	}
+  	document.getElementsByTagName("head")[0].appendChild(styleElement);
+  }
+
+  hmInitHideLinks("#idx div { display: none }");
+
+  var currentdiv = null;
+  var canhidelinks = true;
+
+  function hmshowLinks(divID) {
+    var thisdiv = document.getElementById(divID);
+    canhidelinks = true;
+    hmhideLinks();
+    if (thisdiv) {
+      currentdiv = thisdiv;
+      $(currentdiv).show();
+      $(currentdiv).mouseover(hmdivMouseOver).mouseout(hmdivMouseOut);
+      $(document).mouseup(hmhideLinks);
+    }
+  }
+  function hmdivMouseOver() { canhidelinks = false; };
+  function hmdivMouseOut() { canhidelinks = true; };
+  function hmhideLinks() {
+    if (canhidelinks) {
+      if (currentdiv) {
+        $(currentdiv).hide();
+        $(currentdiv).unbind("onmouseover", "onmouseout");
+      }
+      currentdiv = null;
+      $(document).unbind("onmouseup");
+    }
+  }
+</script>
+<div id="idx" style="margin:0;padding:0;border:none">
+<a name="." id="."></a><p class="idxsection">- . -</p>
+<p class="idxkeyword"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword">.hmskin files</span></a></p>
+<p class="idxkeyword"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword">.xls stylesheet files</span></a></p>
+<p class="idxkeyword"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword">.xsd schema file</span></a></p>
+<a name="A" id="A"></a><p class="idxsection">- A -</p>
+<p class="idxkeyword"><span class="idxkeyword">anchors</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_links.htm" target="hmcontent"><span class="idxkeyword2">hyperlinks to</span></a></p>
+<a name="C" id="C"></a><p class="idxsection">- C -</p>
+<p class="idxkeyword"><a href="hm_quickstart_explorer_navigate.htm" target="hmcontent"><span class="idxkeyword">copy and paste</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">copying, cutting and pasting</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword2">from Word</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_links.htm" target="hmcontent"><span class="idxkeyword">creating hyperlinks</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_addtopics.htm" target="hmcontent"><span class="idxkeyword">creating new topics</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_newproject.htm" target="hmcontent"><span class="idxkeyword">creating projects (tutorial)</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_orgtoc.htm" target="hmcontent"><span class="idxkeyword">cutting and pasting topics</span></a></p>
+<a name="E" id="E"></a><p class="idxsection">- E -</p>
+<p class="idxkeyword"><span class="idxkeyword">eBooks</span></p>
+<p class="idxkeyword2"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword2">template files</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword">editing topics</span></a></p>
+<a name="F" id="F"></a><p class="idxsection">- F -</p>
+<p class="idxkeyword"><span class="idxkeyword">font size preview</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword2">changing</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword">formatting text</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">full-text search</span></p>
+<p class="idxkeyword2"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword2">language files for other languages</span></a></p>
+<a name="G" id="G"></a><p class="idxsection">- G -</p>
+<p class="idxkeyword"><span class="idxkeyword">graphics</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_graphics.htm" target="hmcontent"><span class="idxkeyword2">inserting</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_graphics.htm" target="hmcontent"><span class="idxkeyword2">inserting with cut and paste</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_graphics.htm" target="hmcontent"><span class="idxkeyword2">pasting from Word</span></a></p>
+<a name="H" id="H"></a><p class="idxsection">- H -</p>
+<p class="idxkeyword"><span class="idxkeyword">Help &amp; Manual</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart.htm" target="hmcontent"><span class="idxkeyword2">Quick Start Tutorials</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">hyperlinks</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_links.htm" target="hmcontent"><span class="idxkeyword2">creating</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_links.htm" target="hmcontent"><span class="idxkeyword2">to anchors</span></a></p>
+<a name="I" id="I"></a><p class="idxsection">- I -</p>
+<p class="idxkeyword"><span class="idxkeyword">importing external data</span></p>
+<p class="idxkeyword2"><a href="hm5_quickstart_importing.htm" target="hmcontent"><span class="idxkeyword2">into existing projects</span></a></p>
+<p class="idxkeyword2"><a href="hm5_quickstart_importing.htm" target="hmcontent"><span class="idxkeyword2">into new projects</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_graphics.htm" target="hmcontent"><span class="idxkeyword">inserting graphics</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_tables.htm" target="hmcontent"><span class="idxkeyword">inserting tables</span></a></p>
+<a name="L" id="L"></a><p class="idxsection">- L -</p>
+<p class="idxkeyword"><span class="idxkeyword">language settings</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_newproject.htm" target="hmcontent"><span class="idxkeyword2">for project</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">links</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_links.htm" target="hmcontent"><span class="idxkeyword2">to anchors</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_links.htm" target="hmcontent"><span class="idxkeyword2">tutorial</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword">live spell checking</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_explorer_navigate.htm" target="hmcontent"><span class="idxkeyword">loading multiple projects</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_explorer_navigate.htm" target="hmcontent"><span class="idxkeyword">loading projects</span></a></p>
+<a name="M" id="M"></a><p class="idxsection">- M -</p>
+<p class="idxkeyword"><a href="hm_quickstart_orgtoc.htm" target="hmcontent"><span class="idxkeyword">moving topics</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">MS Help 2.0 (Visual Studio Help)</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_compile.htm" target="hmcontent"><span class="idxkeyword2">publishing</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">MS Word</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword2">copying and pasting from/to</span></a></p>
+<a name="N" id="N"></a><p class="idxsection">- N -</p>
+<p class="idxkeyword"><a href="hm_quickstart_styles.htm" target="hmcontent"><span class="idxkeyword">Normal style</span></a></p>
+<a name="P" id="P"></a><p class="idxsection">- P -</p>
+<p class="idxkeyword"><span class="idxkeyword">PDF</span></p>
+<p class="idxkeyword2"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword2">templates for, standard files</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">print manual templates</span></p>
+<p class="idxkeyword2"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword2">standard files</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">Project Explorer</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_explorer_navigate.htm" target="hmcontent"><span class="idxkeyword2">navigating in</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_explorer_sections.htm" target="hmcontent"><span class="idxkeyword2">sections, about</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_explorer.htm" target="hmcontent"><span class="idxkeyword2">tutorial</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">Project Explorer panes</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword2">split view</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">projects</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_newproject.htm" target="hmcontent"><span class="idxkeyword2">creating (tutorial)</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_compile.htm" target="hmcontent"><span class="idxkeyword2">publishing</span></a></p>
+<a name="S" id="S"></a><p class="idxsection">- S -</p>
+<p class="idxkeyword"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword">search interface language files for WebHelp</span></a></p>
+<p class="idxkeyword"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword">skins</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">spell checking</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword2">live spell checking</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">styles</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_styles.htm" target="hmcontent"><span class="idxkeyword2">defining new</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_tables.htm" target="hmcontent"><span class="idxkeyword2">table styles</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_styles.htm" target="hmcontent"><span class="idxkeyword2">using (tutorial)</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword">styles preview mode (screen/print)</span></a></p>
+<a name="T" id="T"></a><p class="idxsection">- T -</p>
+<p class="idxkeyword"><span class="idxkeyword">Table of Contents</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_orgtoc.htm" target="hmcontent"><span class="idxkeyword2">organizing</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_orgtoc.htm" target="hmcontent"><span class="idxkeyword2">overview</span></a></p>
+<p class="idxkeyword"><a href="hm_quickstart_tables.htm" target="hmcontent"><span class="idxkeyword">table styles</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_styles.htm" target="hmcontent"><span class="idxkeyword2">applying</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_styles.htm" target="hmcontent"><span class="idxkeyword2">defining</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">tables</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_tables.htm" target="hmcontent"><span class="idxkeyword2">inserting</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_tables.htm" target="hmcontent"><span class="idxkeyword2">manipulating</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">topics</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_addtopics.htm" target="hmcontent"><span class="idxkeyword2">creating new</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_orgtoc.htm" target="hmcontent"><span class="idxkeyword2">cutting and pasting</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_orgtoc.htm" target="hmcontent"><span class="idxkeyword2">moving</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">tutorials</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_addtopics.htm" target="hmcontent"><span class="idxkeyword2">adding topics</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_links.htm" target="hmcontent"><span class="idxkeyword2">creating hyperlinks</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_newproject.htm" target="hmcontent"><span class="idxkeyword2">creating projects</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword2">entering and editing text</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_graphics.htm" target="hmcontent"><span class="idxkeyword2">inserting graphics</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_tables.htm" target="hmcontent"><span class="idxkeyword2">inserting tables</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_orgtoc.htm" target="hmcontent"><span class="idxkeyword2">organizing the TOC</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_compile.htm" target="hmcontent"><span class="idxkeyword2">publishing projects</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart.htm" target="hmcontent"><span class="idxkeyword2">Quick Start</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_styles.htm" target="hmcontent"><span class="idxkeyword2">Using Styles</span></a></p>
+<a name="V" id="V"></a><p class="idxsection">- V -</p>
+<p class="idxkeyword"><span class="idxkeyword">Visual Studio Help (MS Help 2.0)</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_compile.htm" target="hmcontent"><span class="idxkeyword2">publishing</span></a></p>
+<a name="W" id="W"></a><p class="idxsection">- W -</p>
+<p class="idxkeyword"><span class="idxkeyword">WebHelp</span></p>
+<p class="idxkeyword2"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword2">language files for Search interface</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_compile.htm" target="hmcontent"><span class="idxkeyword2">publishing</span></a></p>
+<p class="idxkeyword"><span class="idxkeyword">Word</span></p>
+<p class="idxkeyword2"><a href="hm_quickstart_edittopics.htm" target="hmcontent"><span class="idxkeyword2">copying and pasting from/to</span></a></p>
+<p class="idxkeyword2"><a href="hm_quickstart_graphics.htm" target="hmcontent"><span class="idxkeyword2">pasting graphics from</span></a></p>
+<a name="X" id="X"></a><p class="idxsection">- X -</p>
+<p class="idxkeyword"><a href="hm_tutorials_other.htm" target="hmcontent"><span class="idxkeyword">XML schema and stylesheet files</span></a></p>
+</div>
+
+</body>
+</html>
